@@ -1,5 +1,7 @@
 # Backend Base
 
+![Golangci Lint](https://github.com/euforic/backend-base/actions/workflows/golangci-lint.yml/badge.svg)
+
 ## Requirements
 
 - [Go](https://golang.org) `brew install go` or manual install via [link](https://golang.org)
