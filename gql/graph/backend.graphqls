@@ -1,0 +1,62 @@
+# Common types
+type DateTime {
+  format(layout: String = "YYYY-MM-DDTHH:mm:ss[Z]", timezone: String = "UTC"): String
+}
+
+type OffsetPageInfo {
+  totalResults: Int!
+  limit: Int!
+  offset: Int!
+  nextOffset: Int
+  previousOffset: Int
+}
+
+type Todo {
+  id: ID!
+  title: String!
+  body: String!
+  author: String!
+  isDone: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  deletedAt: DateTime
+}
+
+input TodosFilter {
+  done: Boolean
+}
+
+type TodosPayload {
+  Nodes: [Todo!]
+  OffsetPageInfo: OffsetPageInfo!
+}
+
+type Query {
+  todo(id: ID!): Todo
+  todos(
+    limit: Int = 25
+    offset: Int = 0
+    filters: [TodosFilter!]
+  ):TodosPayload!
+}
+
+input CreateTodoInput {
+  title: String!
+  body: String!
+  author: String!
+}
+
+input UpdateTodoInput {
+  id: ID!
+  title: String
+  body: String
+  author: String
+  isDone: Boolean
+}
+
+type Mutation {
+  createTodo(input:CreateTodoInput!): Todo
+  updateTodo(input:UpdateTodoInput!): Todo
+  deleteTodo(id:ID!): Boolean!
+}
+

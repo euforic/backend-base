@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+//import "options.proto";
+
+option go_package = "github.com/euforic/backend-base/proto";
+
+message Todo {
+	string id = 1;
+	string title = 2;
+	string body = 3;
+	string author = 4;
+	bool is_done = 5;
+	google.protobuf.Timestamp created_at = 6;
+	google.protobuf.Timestamp updated_at = 7;
+	google.protobuf.Timestamp deleted_at = 8;
+}
+
+message CreateTodoReq {
+	string title = 2;
+	string body = 3;
+	string author = 4;
+
+}
+
+message CreateTodoRes {
+	Todo todo = 1;
+}
+
+message GetTodoReq {
+	string id = 1;
+}
+
+message GetTodoRes {
+	Todo todo = 1; 
+}
+
+message GetTodosReq {
+	repeated string ids = 1;
+}
+
+message GetTodosRes {
+	repeated Todo todos = 1; 
+}
+
+message UpdateTodoReq {
+	string id = 1;
+	optional string title = 2;
+	optional string body = 3;
+	optional string author = 4;
+	optional bool is_done = 5;
+}
+
+message UpdateTodoRes {
+	Todo todo = 1;
+}
+
+message DeleteTodoReq {
+	string id = 1;
+}
+
+message DeleteTodoRes {
+}
+
+message ListTodosReq {
+	int32 offset = 1;
+	int32 limit = 2;
+	Filters filters = 3;
+}
+
+message Filters {
+	optional bool done = 1;
+}
+
+message ListTodosRes {
+	repeated Todo todos = 1;
+	int32 offset = 2;
+	int32 limit = 3;
+	int32 total = 4;
+}
+
+service TodosService {
+  rpc CreateTodo(CreateTodoReq) returns (CreateTodoRes) {}
+  rpc GetTodo(GetTodoReq) returns (GetTodoRes) {}
+  rpc GetTodos(GetTodosReq) returns (GetTodosRes) {}
+  rpc UpdateTodo(UpdateTodoReq) returns (UpdateTodoRes) {}
+  rpc DeleteTodo(DeleteTodoReq) returns (DeleteTodoRes) {}
+  rpc ListTodos(ListTodosReq) returns (ListTodosRes) {}
+}

@@ -1,0 +1,7 @@
+.idea
+build/*
+.matr/*
+.env
+test.db
+.DS_Store
+*.db
