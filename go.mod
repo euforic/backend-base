@@ -7,7 +7,7 @@ require (
 	github.com/cristalhq/jwt/v3 v3.1.0
 	github.com/golang/protobuf v1.5.2
 	github.com/google/go-cmp v0.5.6
-	github.com/imdario/mergo v0.3.12
+	github.com/imdario/mergo v0.3.15
 	github.com/matr-builder/matr v0.0.0-20210309214705-195229246b38
 	github.com/okta/okta-jwt-verifier-golang v1.1.1
 	github.com/opentracing-contrib/go-grpc v0.0.0-20210225150812-73cb765af46e
