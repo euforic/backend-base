@@ -11,7 +11,7 @@ require (
 	github.com/matr-builder/matr v0.0.0-20210309214705-195229246b38
 	github.com/okta/okta-jwt-verifier-golang v1.1.1
 	github.com/opentracing-contrib/go-grpc v0.0.0-20210225150812-73cb765af46e
-	github.com/opentracing/opentracing-go v1.1.0
+	github.com/opentracing/opentracing-go v1.2.0
 	github.com/pkg/errors v0.9.1
 	github.com/segmentio/ksuid v1.0.4
 	github.com/spf13/cobra v1.2.1
