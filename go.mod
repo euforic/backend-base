@@ -5,7 +5,7 @@ go 1.16
 require (
 	github.com/99designs/gqlgen v0.14.0
 	github.com/cristalhq/jwt/v3 v3.1.0
-	github.com/golang/protobuf v1.5.2
+	github.com/golang/protobuf v1.5.3
 	github.com/google/go-cmp v0.5.6
 	github.com/imdario/mergo v0.3.15
 	github.com/matr-builder/matr v0.0.0-20210309214705-195229246b38
